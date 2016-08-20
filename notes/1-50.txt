@@ -1,0 +1,16 @@
+1.Two Sum
+Key is to use the Unordered_map which is in the "boost library"(see also http://blog.csdn.net/huang_xw/article/details/7933814).
+
+Note that the complexity of unordered_map is o(1). It is thus better to use unodered_map instead of map(STL), whose complexity is o(logn). This performance difference is caused by different implementation. Unordered map used hash map, while map(STL) simply used binary tree structure.
+
+To see detailed comparision between map and unordered_map please refer to http://blog.csdn.net/orzlzro/article/details/7099231.(Something about bucket)
+
+=======================================
+
+2.Add Two Number
+The key to the fastest solution is to figure out how to deal with different length problem, i.e. len(l1) != len(l2). The first intuition was to us l1 to store the result, whhich is lack of consideration. The reasonale solution is to declare a new variable to store the result, while use l1 as a templet and use l2 when l1 is used up. In this way, the total length of l1 and l2 must be greater or equal to the length of the sum of l1 and l2.(Very important, e.g. 9 + 9 = 18)
+
+Also, remember to take the NULL list into account.
+
+=======================================
+
