@@ -14,3 +14,36 @@ Also, remember to take the NULL list into account.
 
 =======================================
 
+3.Longest Substring Without Repeating Characters
+One simple solution is to compute the max length without repeating using every possible start position(0 to s.length()-1), which costs o(n^2) time.
+
+But if we look it from a different angle, we will find that one only needs to compare three value:
+	1) from the start of the string to the first repeated char.
+	2) every length between two repeated char.
+	3) the last repeated char to the end of the string.
+	e.g. for string "abcdbxyz", we need to consider "abcd", "cd", "bxyz", and get the answer of 4.
+
+To do this, we need a map which records the index each char appears in the string. It's a little tricky in the code(use start as -1) but only requires o(n) time complexity:)
+
+=======================================
+
+4.Median of Two Sorted Arrays
+Too hard for me. Solve this later.
+
+=======================================
+
+5.Longest Palindromic Substring
+Scan the string one time and take each position as the pivot of Palindromic substr. This is done by set "start" and "end" variable to i and do start++, end-- to enlarge the palindromic substring. The key is how to deal with consecutive char, such as "sss". Actually, we can ignore the repetition by moving the end to the last repeated position. This is save because any number of a repeat char will form a string that is definitely polindromic.
+
+Again, remember to take the empty string into consideration by checking s.empty().
+
+One question: What is the time complexity of the algorithm? o(n^2)?
+
+=======================================
+
+6.ZigZag Conversion
+This problem is easy as you can find out the mathematical pattern in so many many ways. However, I prefer another method which is quite straight forward. First we should have a number of "numRows" strings. Then for each column, we simply store them in each string one by one, according to the direction "delta". In the end, we concatenate the strings and get the zig-zag converted string.
+
+Remember!!! Consider the empty string and the case where numRows=1!!!!!!
+
+
