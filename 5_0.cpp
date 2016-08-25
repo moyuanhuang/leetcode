@@ -1,4 +1,8 @@
-class Solution {
+/*
+ * 8. Longers Polindrome String
+ * Created by Moyuan Huang on 8.23.2016
+*/ 
+ class Solution {
 public:
     string longestPalindrome(string s)
     {

@@ -1,4 +1,8 @@
-class Solution {
+/*
+ * 3.Longest Substring Without Repeating Characters
+ * Created by Moyuan Huang on 8.22.2016
+*/ 
+ class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
         unordered_map charIndex;

@@ -46,4 +46,54 @@ This problem is easy as you can find out the mathematical pattern in so many man
 
 Remember!!! Consider the empty string and the case where numRows=1!!!!!!
 
+=======================================
+
+7.Reverse Integer
+Simple problem. Just remember to use the INT_MAX and INT_MIN to avoid overflow.
+
+=======================================
+
+8.String to Integer(atoi)
+
+=======================================
+
+9.Palindrome Number
+Your first consideration should be again the exceptional case: Can a negative number be palindromic? No.
+
+Then you can consider how to solve the problem. You should be familiar with how to get the most left and right digit from x.
+
+p.s. just ignore the "without extra space". What is an "extra space"??
+
+=======================================
+
+10.
+
+=======================================
+
+11.Container With Most Water
+The answer to this quesiton is a little tricky. We start from check the maximum area when we select the bottom length as len = (height.size() - 1 - 0). Clearly, the maximum area possible is len1 * max(height[0], height[-1]). Suppose height[0] is bigger, so we decide to select height[0].
+
+Then we check the case where length equals to len2 = len1 - 1. Their are two options available: from 1~height.size()-1, or from 0~height.size()-2; Consider the second opention, where we select height[0]~height[-2]. The possible maximum area is len2 * height[0](regardless of whether height[0] is bigger than heigh[-2] or not), which is in anyway smaller than len1 * height[0].
+
+So we only need to select between len1 * height[0] or len2 * max(height[1], height[-1]). As we compare on and on, we can find that everytime after comparision, we just move the biggher line by one.
+
+Algorithm: cwmw
+Input:	height: contains a series of vertical lines of different height.
+Param:	maxArea: current maximum area;
+		l: left bound index;	r: right bound index.
+maxArea = 0;
+l = 0; r = 0;
+while(l <= r)
+begin
+	tempArea = (l-r) * height[ height[l] < height[r] ? l++:r--];
+	if tempArea > maxArea
+	begin
+		maxArea = tempArea;
+	end
+end
+
+The time complexity is o(n).
+
+=======================================
+
 

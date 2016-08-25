@@ -1,4 +1,8 @@
-class Solution {
+/*
+ * 6.Zigzag Conversion
+ * Created by Moyuan Huang on 8.23.2016
+*/ 
+ class Solution {
 public:
     string convert(string s, int numRows) {
         if(s.empty())   return "";
