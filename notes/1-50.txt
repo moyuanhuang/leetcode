@@ -96,4 +96,21 @@ The time complexity is o(n).
 
 =======================================
 
+12.Integer to Roman
+Roman number is really weird!
+One special case is 900, 90, 9...Nothing more to say= =
+
+=======================================
+
+13.Roman to Integer
+Even more stupid than 12:)
+
+=======================================
+
+14.Longest Common Prefix
+First scan to get the longest length of the strings, and return "" if any of their length is 0. Then from 0 to maxLen, compare the i-th character in in each string.
+
+=======================================
+
+
 
