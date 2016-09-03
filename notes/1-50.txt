@@ -112,5 +112,14 @@ First scan to get the longest length of the strings, and return "" if any of the
 
 =======================================
 
+15.3Sum
+This is a nSum question where n = 3. NSum is a classic series of problem where comprehensive explancation and answer can be found at http://tech-wonderland.net/blog/summary-of-ksum-problems.html.
+
+First intuition would be to use a three fold iternation which cost o(n^3) time. However, if we sort the nums array first(use 0(nlogn) time), then we will us inly o(n^2) time. For each nums[i], we start to find the other 2 number from nums[i+1] and nums[nums.size()-1] and squeeze the range of search space.
+
+Special cases are when nums.size() < 3
+
+=======================================
+
 
 
