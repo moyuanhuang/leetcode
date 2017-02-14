@@ -22,7 +22,7 @@ private:
 			{
 				if( l + km1 <= r and mn == nums[l + km1])
 				{
-					for( i = 0; i < k; i++)	cur[ci + i] = mx;
+					for( i = 0; i < k; i++)	cur[ci + i] = mn;
 					retVal.push_back(cur);
 				}
 				break;

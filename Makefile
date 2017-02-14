@@ -1,2 +1,2 @@
-hellomake: main.cpp 15_0.cpp
-	g++ -o ./build/main main.cpp 16_0.cpp -I.
+hellomake: main.cpp 95_0.cpp
+	g++ -o ./build/main main.cpp 95_0.cpp -I.

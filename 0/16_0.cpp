@@ -9,7 +9,7 @@ public:
     	int size = nums.size();
     	if(size < 3)	return 0;
     	sort(nums.begin(), nums.end());
-        cout << endl;
+        // cout << endl;
     	int min = INT_MAX;
     	for(int i = 0; i < size; i++)
     	{
