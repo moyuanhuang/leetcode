@@ -1,17 +1,19 @@
 class Solution {
 public:
-    int hIndex(vector<int>& citations) {
-      int size = citations.size();
-      if(!size) return 0;
-      if(size == 1) return min(size, citations[0]);
-
-      int left = 0, right = citations.size() - 1;
-      while(left < right){
-        int mid = left + (right - left)/2;
-        if(citations[mid] == size - mid)  return citations[mid];
-        else if(citations[mid] > size - mid) right = mid;
-        else  left = mid + 1;
-      }
-      return size - right;
+  int hIndex(vector<int>& citations) {
+    int low = 0, high = citations.size();
+    int total = citations.size()
+    while(low < high){
+      int mid = low + (high - low) / 2;
+      count = high - mid + 1;
+      if(count >= citations[mid])
+        low = mid + 1;
+      else
+        high = mid;
     }
+    if((high - low + 1) < citations[low])
+      return citations[low - 1];
+    else
+      return citations[low];
+  }
 };
