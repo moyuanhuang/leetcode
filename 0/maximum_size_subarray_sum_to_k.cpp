@@ -3,25 +3,16 @@ public:
     int maxSubArrayLen(vector<int>& nums, int k) {
       if(nums.empty())  return 0;
       int size = nums.size();
-      vector<int> sum(size);
-      sum[0] = nums[0];
-      for(int i = 1; i < nums.size(); ++i)
-        sum[i] += sum[i-1] + nums[i];
+      for(int i = 1; i < size; ++i)
+        nums[i] += nums[i+1];
       unordered_map<int, int> umap;
-      umap[sum[0]] = 0;
-      int max_length = umap[0] == k? 1 : 0;
-      for(int i = 1; i < nums.size(); ++i){
-        if(sum[i] == k){
-          max_length = max(i + 1, max_length);
-          continue;
-        }
-        int finding = sum[i] - k;
-        if(umap.find(finding) != umap.end()){
-          max_length = max(i - umap[finding], max_length);
-        }
-        else{
-          umap[sum[i]] = i;
-        }
+      umap[0] = -1;
+      int max_length = 0;
+      for(int i = 0; i < size; ++i){
+        if(umap.find(nums[i] - k) != umap.end())
+          max_length = max(i - umap[nums[i] - k], max_length);
+        if(umap.find(nums[i]) == umap.end())
+          umap[nums[i]] = i;
       }
       return max_length;
     }
