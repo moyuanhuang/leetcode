@@ -1,5 +1,6 @@
 // leetcode 253. Meeting Rooms II
 // medium
+// just use priority queue O(nlogn)
 
 /**
  * Definition for an interval.
